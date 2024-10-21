@@ -1,0 +1,22 @@
+.middle {
+    margin: auto auto;
+    width: 300px;
+    font-size: 17px;
+}
+
+.field {
+    padding: 50px;
+    background-color: #cce7f0;
+}
+
+.body {
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20201101/pngtree-scene-with-geometrical-forms-the-poster-model-minimal-background-render-image_452981.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.img {
+    width: 20px;
+    height: 200px;
+}
