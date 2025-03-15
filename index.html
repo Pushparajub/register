@@ -5,7 +5,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Mobile Form</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s ease;
+        }
+        
+        .middle {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .middle:hover {
+            transform: scale(1.02);
+        }
+        
+        .field {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .field legend {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="mobile.no"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="mobile.no"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #007bff;
+        }
+        
+        input[type="radio"] {
+            margin-right: 5px;
+            vertical-align: middle;
+            /* Align radio buttons vertically */
+        }
+        
+        .gender-container {
+            display: flex;
+            /* Use flexbox to align gender options */
+            align-items: center;
+            /* Align items vertically in the center */
+            margin-bottom: 10px;
+        }
+        
+        .gender-container label {
+            display: inline-block;
+            /* Display labels inline */
+            margin-left: 5px;
+            /* Add some space between radio and label */
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+        audio {
+            width: 100%;
+        }
+        
+        #verificationStatus {
+            color: red;
+            margin-top: 5px;
+            text-align: center;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        
+        #verificationStatus.show {
+            opacity: 1;
+        }
+    </style>
     <script>
         function verifyAndSubmit(event) {
             const userInput = document.getElementById("verification").value;
